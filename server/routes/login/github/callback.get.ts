@@ -98,7 +98,7 @@ export default defineEventHandler(async (event) => {
       "Set-Cookie",
       lucia.createSessionCookie(session.id).serialize(),
     );
-    return sendRedirect(event, "/");
+    return sendRedirect(event, "/protected");
   } catch (e) {
     if (
       e instanceof OAuth2RequestError &&
