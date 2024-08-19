@@ -10,27 +10,11 @@ useHead({
 
 const user = useAuthenticatedUser();
 
-const isLoading = ref(false);
-
 async function logout() {
   await $fetch("/api/auth/logout", {
     method: "POST",
   });
   await navigateTo("/auth/login");
-}
-
-async function sendVerificationEmailLink() {
-  isLoading.value = true;
-  await $fetch("/api/auth/email-verification", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: {
-      email: user.value.email,
-    },
-  });
-  isLoading.value = false;
 }
 </script>
 
@@ -56,20 +40,6 @@ async function sendVerificationEmailLink() {
           >
             {{ user.emailVerified ? "Yes" : "No" }}
           </div>
-
-          <button
-            v-if="!user.emailVerified"
-            @click="sendVerificationEmailLink"
-            class="btn btn-outline btn-primary btn-sm"
-            :disabled="isLoading"
-          >
-            Send Link
-            <Icon
-              name="line-md:loading-twotone-loop"
-              size="24"
-              v-if="isLoading"
-            />
-          </button>
         </div>
         <p>Role: {{ user.role }}</p>
         <p>
