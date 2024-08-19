@@ -48,10 +48,13 @@ export default defineEventHandler(async (event) => {
       where: {
         email: googleUser.email.toLowerCase(),
       },
+      include: {
+        google: true,
+      }
     });
 
-    // If the user has already an account, but not linked to GitHub, link the accounts
-    if (existingUser && !existingUser.github) {
+    // If the user has already an account, but not linked to Google, link the accounts
+    if (existingUser && !existingUser.google) {
       await prisma.googleUser.create({
         data: {
           id: generateIdFromEntropySize(10),
