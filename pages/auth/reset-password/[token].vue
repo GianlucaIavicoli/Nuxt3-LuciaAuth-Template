@@ -60,7 +60,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
 
     if (response.ok) {
       isResetPassowordCompleted.value = true;
-      await navigateTo("/");
+      await navigateTo("/protected");
     }
   } catch (error: any) {
     // Check if the token is invalid

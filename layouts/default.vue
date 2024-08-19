@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 <template>
   <div class="wrapper">
     <AppNavbar />
-    <main class="grid h-full place-content-center py-10">
+    <main class="grid h-full place-content-center py-10 px-4">
       <slot />
     </main>
     <AppFooter />

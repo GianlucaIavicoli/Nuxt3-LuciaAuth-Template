@@ -45,7 +45,7 @@ const onSubmit = async () => {
     isLoading.value = false;
     if (response.ok) {
       isVerifyEmailCompleated.value = true;
-      await navigateTo("/");
+      await navigateTo("/protected");
     }
   } catch (error: any) {
     // Check if the token is invalid

@@ -43,7 +43,7 @@ const onSubmit = handleSubmit(async (values: LoginFormData) => {
 
     isLoading.value = false;
     // Navigate to the home page on success
-    await navigateTo("/");
+    await navigateTo("/protected");
   } catch (error: any) {
     const errors = error.data.data;
 

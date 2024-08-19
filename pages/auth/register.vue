@@ -38,8 +38,6 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
     isLoading.value = false;
     // Navigate to the home page on success
 
-    console.log(response);
-
     // If the response is ok, send the email verification
     if (response.ok) {
       await $fetch("/api/auth/email-verification", {
@@ -53,7 +51,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
       });
     }
 
-    await navigateTo("/");
+    await navigateTo("/protected");
   } catch (error: any) {
     const errors = error.data.data;
 
