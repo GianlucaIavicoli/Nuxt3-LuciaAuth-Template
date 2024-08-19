@@ -73,6 +73,20 @@ Make sure to install the dependencies:
 npm install
 ```
 
+## Setup Prisma
+
+After installing the dependencies, you need to set up Prisma. First, run the migration command and specify a name for the migration. You can use `"init"` as the name:
+
+```bash
+npx prisma migrate dev --name init
+```
+
+Next, generate the Prisma client:
+
+```bash
+npx prisma generate
+```
+
 ## Development Server
 
 Start the development server on `http://localhost:3000`:
