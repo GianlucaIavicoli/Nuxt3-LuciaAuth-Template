@@ -1,0 +1,50 @@
+{
+  "name": "nuxt3-lucia-auth-template",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "This is a template for building an authentication system using Nuxt 3, Lucia-Auth for authentication, Prisma as ORM, PostgreSQL as the database, Mailtrap for handling emails, Zod and VeeValidate for form validation, and Tailwind CSS for styling.",
+  "author": "Gianluca Iavicoli <info@gianlucaiavicoli.dev>",
+  "license": "MIT",
+  "homepage": "https://github.com/GianlucaIavicoli/nuxt3-lucia-auth-template",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GianlucaIavicoli/nuxt3-lucia-auth-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GianlucaIavicoli/nuxt3-lucia-auth-template/issues"
+  },
+  "scripts": {
+    "build": "prisma generate && nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@lucia-auth/adapter-prisma": "^4.0.1",
+    "@nuxt/icon": "^1.4.5",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "@prisma/client": "^5.18.0",
+    "@types/nodemailer": "^6.4.15",
+    "@vee-validate/zod": "^4.13.2",
+    "@vercel/speed-insights": "^1.0.12",
+    "arctic": "^1.9.2",
+    "bcrypt": "^5.1.1",
+    "lucia": "^3.2.0",
+    "mailtrap": "^3.4.0",
+    "nuxt": "^3.12.4",
+    "prisma": "^5.18.0",
+    "tsx": "^4.16.5",
+    "vee-validate": "^4.13.2",
+    "vue": "latest",
+    "zod": "^3.23.8",
+    "daisyui": "^4.12.10",
+    "@iconify-json/line-md": "^1.1.39",
+    "@iconify-json/logos": "^1.1.44",
+    "@iconify-json/material-symbols": "^1.1.88",
+    "@iconify-json/mdi": "^1.1.68",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.5"
+  }
+}
