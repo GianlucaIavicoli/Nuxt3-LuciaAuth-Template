@@ -31,7 +31,14 @@ This is a template for building an authentication system using Nuxt 3, Lucia-Aut
 ### Pre-Built Pages
 - **Tailwind CSS and DaisyUI Styling**: The template includes pre-built pages that are fully styled using Tailwind CSS and DaisyUI.
 - **Form Validation (Client and Server-Side)**: All forms on the pre-built pages are validated both on the client side using Zod and VeeValidate.
-
+- **Pages:**
+  - Homepage: An accessible page for anyone visiting the site.
+  - Protected Page: A page that requires users to be signed in to access.
+  - Login Page
+  - Register Page
+  - Reset Password Page (Send Request)
+  - Reset Password Page (Confirm)
+  - Email Verification Page
 
 ## Setup
 
