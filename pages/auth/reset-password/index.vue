@@ -59,7 +59,7 @@ const onSubmit = handleSubmit(async (values: SendResetPasswordFormData) => {
         <div class="label">
           <span class="label-text">Email</span>
         </div>
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:mail-rounded" size="20" />
           <input
             v-model="email"
@@ -69,7 +69,7 @@ const onSubmit = handleSubmit(async (values: SendResetPasswordFormData) => {
             class="grow"
             :disabled="isLoading"
           />
-        </label>
+        </div>
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">
             {{ errors.email }}
@@ -89,7 +89,7 @@ const onSubmit = handleSubmit(async (values: SendResetPasswordFormData) => {
 
     <p class="text-muted-foreground text-center text-sm">
       Have you remembered your password?
-      <NuxtLink href="/auth/login" class="text-primary">Login now</NuxtLink>
+      <NuxtLink href="/auth/login" class="link link-primary font-bold">Login now</NuxtLink>
     </p>
   </div>
 
@@ -103,7 +103,7 @@ const onSubmit = handleSubmit(async (values: SendResetPasswordFormData) => {
     </p>
     <p class="text-muted-foreground text-center text-sm">
       Have you remembered your password?
-      <NuxtLink href="/auth/login" class="text-primary">Login now</NuxtLink>
+      <NuxtLink href="/auth/login" class="link link-primary font-bold">Login now</NuxtLink>
     </p>
   </div>
 </template>

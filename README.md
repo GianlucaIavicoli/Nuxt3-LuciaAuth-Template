@@ -1,6 +1,6 @@
 # Nuxt3 Lucia-Auth Template
 
-This is a template for building an authentication system using Nuxt 3, Lucia-Auth for authentication, Prisma as ORM, PostgreSQL as the database, Mailtrap for handling emails, Zod and VeeValidate for form validation, and Tailwind CSS for styling.
+A Nuxt.js Authentication template (login, register, email validation, reset password and oauth) using Lucia-Auth, Prisma, PostgreSQL and Mailtrap.
 
 
 ## Tech Stack:

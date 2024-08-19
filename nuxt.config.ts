@@ -2,7 +2,15 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  ssr: false,
+  ssr: true,
+
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "en",
+      },
+    },
+  },
 
   runtimeConfig: {
     origin: process.env.ORIGIN,

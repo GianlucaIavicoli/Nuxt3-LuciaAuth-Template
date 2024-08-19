@@ -92,7 +92,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
           <span class="label-text">Password</span>
         </div>
 
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:key-vertical-rounded" size="20" />
           <input
             v-model="password"
@@ -103,6 +103,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
             :disabled="isLoading"
           />
           <button
+            aria-label="Toggle password visibility"
             type="button"
             class="flex items-center justify-center"
             @click="showPassword = !showPassword"
@@ -110,7 +111,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
             <Icon name="mdi:eye" size="20" v-if="!showPassword" />
             <Icon name="mdi:eye-off" size="20" v-else />
           </button>
-        </label>
+        </div>
 
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">{{
@@ -124,7 +125,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
           <span class="label-text">Confirm Password</span>
         </div>
 
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:key-vertical-rounded" size="20" />
           <input
             v-model="confirmPassword"
@@ -135,6 +136,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
             :disabled="isLoading"
           />
           <button
+            aria-label="Toggle password visibility"
             type="button"
             class="flex items-center justify-center"
             @click="showConfirmPassword = !showConfirmPassword"
@@ -142,7 +144,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
             <Icon name="mdi:eye" size="20" v-if="!showConfirmPassword" />
             <Icon name="mdi:eye-off" size="20" v-else />
           </button>
-        </label>
+        </div>
       </label>
 
       <button
@@ -157,7 +159,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
 
     <p class="text-muted-foreground text-center text-sm">
       Have you remembered your password?
-      <NuxtLink href="/auth/register" class="text-primary">Login now</NuxtLink>
+      <NuxtLink href="/auth/register" class="link link-primary font-bold">Login now</NuxtLink>
     </p>
   </div>
 
@@ -169,7 +171,7 @@ const onSubmit = handleSubmit(async (values: ConfirmResetPasswordFormData) => {
     <p class="text-center text-white">The reset password link is invalid.</p>
     <p class="text-muted-foreground text-center text-sm">
       Have you remembered your password?
-      <NuxtLink href="/auth/login" class="text-primary">Login now</NuxtLink>
+      <NuxtLink href="/auth/login" class="link link-primary font-bold">Login now</NuxtLink>
     </p>
   </div>
 </template>

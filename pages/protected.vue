@@ -3,8 +3,8 @@ definePageMeta({
   middleware: ["protected"],
 });
 
-useHead({
-  title: "User Info",
+useSeoMeta({
+  title: "Protected - User Info",
   description: "User information",
 });
 

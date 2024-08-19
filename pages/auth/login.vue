@@ -4,19 +4,12 @@ import { loginValidationSchema } from "~/validations/auth";
 import type { LoginFormData } from "~/validations/auth";
 
 definePageMeta({
-  title: "Login",
-  description: "Create an account",
   layout: "auth",
 });
 
-useHead({
+useSeoMeta({
   title: "Login",
-  meta: [
-    {
-      name: "description",
-      content: "Create an account",
-    },
-  ],
+  description: "Login to your account",
 });
 
 const { handleSubmit, errors, setErrors } = useForm({
@@ -59,15 +52,16 @@ const onSubmit = handleSubmit(async (values: LoginFormData) => {
     <h1 class="mb-2 text-center text-3xl font-bold text-white">
       Login to your account
     </h1>
-    <form @submit.prevent="onSubmit" class="flex flex-col gap-2">
+    <form @submit.prevent="onSubmit" class="flex flex-col gap-2" aria-label="Login form">
 
       <label class="form-control w-full max-w-xs">
         <div class="label">
           <span class="label-text">Email</span>
         </div>
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:mail-rounded" size="20" />
           <input
+            aria-label="Email"
             v-model="email"
             name="email"
             type="email"
@@ -75,7 +69,7 @@ const onSubmit = handleSubmit(async (values: LoginFormData) => {
             class="grow"
             :disabled="isLoading"
           />
-        </label>
+        </div>
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">
             {{ errors.email }}
@@ -89,9 +83,10 @@ const onSubmit = handleSubmit(async (values: LoginFormData) => {
           <NuxtLink to="/auth/reset-password" class="label-text-alt text-primary">Forgot password?</NuxtLink>
         </div>
 
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:key-vertical-rounded" size="20" />
           <input
+            aria-label="Password"
             v-model="password"
             name="password"
             placeholder="password"
@@ -100,6 +95,7 @@ const onSubmit = handleSubmit(async (values: LoginFormData) => {
             :disabled="isLoading"
           />
           <button
+            aria-label="Toggle password visibility"
             type="button"
             class="flex items-center justify-center"
             @click="showPassword = !showPassword"
@@ -107,7 +103,7 @@ const onSubmit = handleSubmit(async (values: LoginFormData) => {
             <Icon name="mdi:eye" size="20" v-if="!showPassword" />
             <Icon name="mdi:eye-off" size="20" v-else />
           </button>
-        </label>
+        </div>
 
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">{{
@@ -150,7 +146,7 @@ const onSubmit = handleSubmit(async (values: LoginFormData) => {
 
     <p class="text-muted-foreground text-center text-sm">
       Don't have an account?
-      <NuxtLink href="/auth/register" class="text-primary">Register now</NuxtLink>
+      <NuxtLink href="/auth/register" class="link link-primary font-semibold">Register now</NuxtLink>
     </p>
   </div>
 </template>

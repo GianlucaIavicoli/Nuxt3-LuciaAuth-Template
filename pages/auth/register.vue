@@ -4,9 +4,12 @@ import { registerValidationSchema } from "~/validations/auth";
 import type { RegisterFormData } from "~/validations/auth";
 
 definePageMeta({
+  layout: "auth",
+});
+
+useSeoMeta({
   title: "Register",
   description: "Create an account",
-  layout: "auth",
 });
 
 const { handleSubmit, errors, setErrors } = useForm({
@@ -73,7 +76,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
           <span class="label-text">Username</span>
         </div>
 
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:person" size="20" />
           <input
             v-model="username"
@@ -83,7 +86,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
             class="grow"
             :disabled="isLoading"
           />
-        </label>
+        </div>
 
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">
@@ -96,7 +99,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
         <div class="label">
           <span class="label-text">Email</span>
         </div>
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:mail-rounded" size="20" />
           <input
             v-model="email"
@@ -106,7 +109,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
             class="grow"
             :disabled="isLoading"
           />
-        </label>
+        </div>
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">
             {{ errors.email }}
@@ -119,7 +122,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
           <span class="label-text">Password</span>
         </div>
 
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:key-vertical-rounded" size="20" />
           <input
             v-model="password"
@@ -130,6 +133,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
             :disabled="isLoading"
           />
           <button
+            aria-label="Toggle password visibility"
             type="button"
             class="flex items-center justify-center"
             @click="showPassword = !showPassword"
@@ -137,7 +141,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
             <Icon name="mdi:eye" size="20" v-if="!showPassword" />
             <Icon name="mdi:eye-off" size="20" v-else />
           </button>
-        </label>
+        </div>
 
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">{{
@@ -151,7 +155,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
           <span class="label-text">Confirm Password</span>
         </div>
 
-        <label class="input input-bordered flex items-center gap-2">
+        <div class="input input-bordered flex items-center gap-2">
           <Icon name="material-symbols:key-vertical-rounded" size="20" />
           <input
             v-model="confirmPassword"
@@ -162,6 +166,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
             :disabled="isLoading"
           />
           <button
+            aria-label="Toggle password visibility"
             type="button"
             class="flex items-center justify-center"
             @click="showConfirmPassword = !showConfirmPassword"
@@ -169,7 +174,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
             <Icon name="mdi:eye" size="20" v-if="!showConfirmPassword" />
             <Icon name="mdi:eye-off" size="20" v-else />
           </button>
-        </label>
+        </div>
 
         <div class="label">
           <span class="label-text-alt w-full text-sm text-red-500">{{
@@ -233,7 +238,7 @@ const onSubmit = handleSubmit(async (values: RegisterFormData) => {
 
     <p class="text-muted-foreground text-center text-sm">
       Already registered?
-      <NuxtLink href="/auth/login" class="text-primary">Sign In</NuxtLink>
+      <NuxtLink href="/auth/login" class="link link-primary font-bold">Sign In</NuxtLink>
     </p>
   </div>
 </template>
